@@ -1,117 +1,13 @@
-body {
-  margin: 0;
-}
-
-main {
-  display: grid;
-  grid-template-areas: 
-    "n"
-    "s"
-    "ss"
-    "SearchLinkSection"
-    "AppSection"
-    "ContactForm"
-    "f";
-  grid-template-rows: 60px 360px 600px auto auto auto 620px;
-  height: 100vh;
-}
-
-/* Navbar */
-#Navbar {
-  grid-area: n;
-  background-color: #ff385c;
-}
-
-/* Footer */
-#Footer {
-  grid-area: f;
-  color: white;
-}
-
-/* Services Section */
-#ServicesSection {
-  grid-area: ss;
-}
-
-/* Search Tabs */
-#SearchTabs {
-  grid-area: s;
-  color: white;
-}
-
-/* Search Links Section */
-#SearchLinksSection {
-  grid-area: SearchLinkSection;
-}
-
-/* App Section */
-#AppSection {
-  grid-area: AppSection;
-}
-
-/* Contact Form Section */
-#ContactForm {
-  grid-area: ContactForm;
-}
-
-/* Universal Styles */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Libre Franklin", -apple-system, BlinkMacSystemFont, Roboto, "Droid Sans", Helvetica, Arial, sans-serif;
+  box-sizing: border-box; 
 }
 
-.App {
-  overflow: hidden;
-}
-
-/* Responsive Grid and Flexbox */
-.container {
-  display: flex;
-  flex-wrap: wrap; /* Wrap items to the next row for smaller screens */
-  gap: 10px; /* Add space between items */
-}
-
-.item {
-  flex: 1 1 200px; /* Flexible item size based on available space */
-}
-
-/* Styles for larger screens */
-@media (min-width: 768px) {
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px; /* Add padding for better alignment */
-  }
-
-  main {
-    grid-template-rows: 60px 360px 500px auto auto auto 500px; /* Adjust rows for larger screens */
-  }
-}
-
-/* Styles for smaller screens */
-@media (max-width: 767px) {
-  .navbar {
-    display: block;
-    padding: 10px;
-  }
-
-  .container {
-    flex-direction: column; /* Stack items vertically */
-    gap: 15px; /* Increase space between stacked items */
-  }
-
-  main {
-    grid-template-rows: 50px 300px 400px auto auto auto 400px; /* Adjust rows for smaller screens */
-    height: auto; /* Allow height to adjust dynamically */
-  }
-
-  #Navbar {
-    height: auto; /* Allow Navbar height to adjust */
-  }
-
-  .item {
-    flex: 1 1 100%; /* Each item takes full width */
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #C82021; 
 }

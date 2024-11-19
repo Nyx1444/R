@@ -1,13 +1,12 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './App.css'
-import App from './App.jsx'
-import { GlobalEventContext } from './context/GlobalEventContext.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Navbar from './components/Navbar/Navbar';
+import GlobalEventProvider from './context/GlobalEventContext';
+import App from './App';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <GlobalEventContext>
-      <App />
-    </GlobalEventContext>
-  </StrictMode>,
-)
+ReactDOM.render(
+  <GlobalEventProvider>
+    <App></App>
+  </GlobalEventProvider>,
+  document.getElementById('root')
+);
