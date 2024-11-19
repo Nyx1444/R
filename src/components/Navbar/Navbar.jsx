@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import './Nav.css';
+import './Navbar.css';
 import logo from '../../img/logo-Photoroom.png';
 import Modal from '../Modal/Modal';
+import { useGlobalEvent } from '../../context/GlobalEventContext';
 
 const Navbar = () => {
+  const { windowSize } = useGlobalEvent(); // ใช้ Context เพื่อดึงข้อมูล windowSize
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -19,7 +21,10 @@ const Navbar = () => {
       <div className="navbar__logo">
         <img src={logo} alt="Redfin Logo" className="logo" />
       </div>
-      <div className="navbar__menu-actions">
+
+      {windowSize.width >= 600 ? (
+        // เงื่อนไขสำหรับหน้าจอกว้างกว่า 600px
+        <div className="navbar__menu-actions">
         <nav className="navbar__nav">
           <ul>
             <li className="dropdown">
@@ -127,7 +132,30 @@ const Navbar = () => {
         <div className="navbar__actions">
           <button onClick={openModal} className="join-signin">Join / Sign in</button>
         </div>
+        <Modal isOpen={isModalOpen} onClose={closeModal} /> 
       </div>
+      ) : (
+        // เงื่อนไขสำหรับหน้าจอแคบกว่า 600px
+        <div className="navbar__menu-actions">
+          <nav className="navbar__nav">
+            <ul>
+              <li className="dropdown">
+                <a href="#buy">Buy ▾</a>
+              </li>
+              <li className="dropdown">
+                <a href="#sell">Sell ▾</a>
+              </li>
+              <li className="dropdown">
+                <a href="#agents">Agents ▾</a>
+              </li>
+            </ul>
+          </nav>
+          <div className="navbar__actions">
+            <button onClick={openModal} className="join-signin">Menu</button>
+          </div>
+        </div>
+      )}
+
       <Modal isOpen={isModalOpen} onClose={closeModal} />
     </header>
   );

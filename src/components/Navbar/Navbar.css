@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600&display=swap');
 
+/* -----------------------
+   Default Styles (Desktop)
+------------------------ */
 .navbar {
   display: flex;
   align-items: center;
@@ -10,7 +13,7 @@
   font-family: "Libre Franklin", -apple-system, BlinkMacSystemFont, Roboto, "Droid Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
   white-space: nowrap;
-  z-index: 10; 
+  z-index: 10;
   overflow: visible;
 }
 
@@ -54,9 +57,6 @@
   font-weight: bold;
   margin-left: 30px;
   transition: background-color 0.3s ease;
-  text-decoration: none;
-  font-weight: bold;
-  margin-left: 30px;
   font-size: 14px;
   font-family: "Libre Franklin", -apple-system, BlinkMacSystemFont, Roboto, "Droid Sans", Helvetica, Arial, sans-serif;
 }
@@ -70,7 +70,6 @@
   z-index: 20; /* ให้ dropdown อยู่เหนือ navbar */
 }
 
-/* ปรับระยะห่างและการจัดเรียงใน dropdown */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -81,20 +80,17 @@
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
   z-index: 1;
   border-radius: 4px;
-  grid-template-columns: auto auto auto; /* ตั้งค่าให้คอลัมน์ขยายตามเนื้อหา */
+  grid-template-columns: auto auto auto;
   gap: 15px;
   padding: 15px;
   white-space: nowrap;
   max-width: none;
 }
 
-
-/* แสดง dropdown-content เฉพาะตัวที่ถูก hover */
 .navbar__nav ul > li:hover .dropdown-content {
   display: grid;
 }
 
-/* ลูกศรชี้ลง */
 .dropdown-content::before {
   content: "";
   position: absolute;
@@ -104,7 +100,6 @@
   border-style: solid;
   border-color: transparent transparent #ffffff transparent;
   z-index: 2;
-
 }
 
 .dropdown-column {
@@ -112,18 +107,13 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  min-width: auto; /* ให้ขนาดขึ้นอยู่กับเนื้อหา */
-  width: auto; /* ปรับความกว้างให้ตามเนื้อหา */
-  flex-grow: 0; /* ป้องกันการขยายคอลัมน์เกินตามขนาดเนื้อหา */
 }
-
 
 .dropdown-column h4 {
   margin: 0 0 10px;
   color: #585858;
   font-weight: bold;
   font-size: 16px;
-  font-family: Libre Franklin, -apple-system, BlinkMacSystemFont, Roboto, Droid Sans, Helvetica, Arial, sans-serif;
 }
 
 .dropdown-content a {
@@ -131,14 +121,83 @@
   text-decoration: none;
   padding: 5px 0;
   transition: background-color 0.3s ease;
-  white-space: nowrap; /* ป้องกันการตัดบรรทัด */
+  white-space: nowrap;
   font-size: 14px;
-  font-family: Libre Franklin, -apple-system, BlinkMacSystemFont, Roboto, Droid Sans, Helvetica, Arial, sans-serif;
   font-weight: lighter;
   color: #333;
 }
 
-
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+}
+
+/* -----------------------
+   Responsive Styles
+------------------------ */
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .navbar__logo {
+    margin-bottom: 10px;
+  }
+
+  .navbar__menu-actions {
+    display: none; /* Hide the desktop menu */
+  }
+
+  .navbar__mobile-menu-button {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    display: block;
+    width: 100%;
+    background-color: #C82021;
+    color: white;
+    list-style: none;
+    padding: 10px 0;
+  }
+
+  .mobile-nav li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dropdown-content {
+    display: block;
+    position: static;
+    box-shadow: none;
+    padding: 5px;
+  }
+
+  .dropdown-column {
+    flex-direction: column;
+    padding: 0;
+  }
 }
