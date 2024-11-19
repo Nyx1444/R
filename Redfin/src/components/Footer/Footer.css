@@ -1,0 +1,162 @@
+/* Footer container */
+.footer {
+  padding: 50px 0px;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 155px; /* ขนาดขั้นต่ำที่กำหนด */
+  margin-bottom: 20px;
+}
+
+/* กำหนดขนาดให้คอลัมน์แรก, คอลัมน์ที่สอง, และคอลัมน์ที่สาม */
+.footer-column:nth-child(1),
+.footer-column:nth-child(2),
+.footer-column:nth-child(3) {
+  flex-basis: 155px; /* ขนาดคอลัมน์เป็น 155px */
+}
+
+/* กำหนดขนาดให้คอลัมน์ที่สี่ */
+.footer-column:nth-child(4) {
+  flex-basis: 600px; /* ขนาดคอลัมน์เป็น 500px */
+}
+
+/* Main container for columns */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0px 140px;
+  gap: 20px;
+}
+
+/* Column header */
+.footer-column h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: "Libre Franklin", sans-serif;
+  color: #565656;
+}
+
+.footer-column p {
+  font-size: 12px;
+  font-weight: lighter;
+  margin-bottom: 25px;
+  font-family: "Libre Franklin", sans-serif;
+  color: #565656;
+}
+
+/* List reset */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Libre Franklin", sans-serif;
+  color: #333333;
+  font-size: 12px;
+}
+
+/* List item style */
+.footer-column li {
+  margin-bottom: 20px;
+}
+
+.footer-column li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-column li a:hover {
+  text-decoration: underline;
+}
+
+/* App download links */
+.app-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.app-links img {
+  width: 136px;
+}
+
+/* Social media links */
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ขนาดเริ่มต้นของไอคอนและการตั้งค่าสีเริ่มต้น */
+.footer-socials a svg {
+  fill: #999; /* สีเริ่มต้น */
+  transition: fill 0.3s ease; /* เพิ่ม transition */
+}
+
+/* เปลี่ยนสีเมื่อ hover สำหรับแต่ละไอคอน */
+.footer-socials a.facebook:hover svg {
+  fill: #3b5998; /* Facebook สีฟ้า */
+}
+
+.footer-socials a.twitter:hover svg {
+  fill: #1DA1F2; /* Twitter สีฟ้าอ่อน */
+}
+
+.footer-socials a.tiktok:hover svg {
+  fill: #000000; /* TikTok สีดำ */
+}
+
+.footer-socials a.instagram:hover svg {
+  fill: #E1306C; /* Instagram สีชมพู */
+}
+
+.country-selector img {
+  width: 25px ;
+  height: auto; 
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Legal information */
+.footer-legal {
+  font-size: 12px;
+  line-height: 2;
+}
+
+.footer-legal p {
+  margin: 5px 0;
+}
+
+.footer-legal a {
+  color: #C82021;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+
+.housing-policy {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.housing-policy .icon.ehoLogo {
+  width: 48px; /* Adjust as necessary */
+  height: auto;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.housing-policy .bold-text p {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: bold !important;
+}
