@@ -1,0 +1,188 @@
+/* หลักของหน้า houses for sale */
+.houses-for-sale {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  background-color: #fff;
+}
+
+/* ส่วนบน: ข้อความ + ภาพ */
+.houses-for-sale__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px; /* ระยะห่างระหว่างข้อความและภาพ */
+}
+
+.houses-for-sale__content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.houses-for-sale__content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.houses-for-sale__content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.houses-for-sale__image {
+  flex: 1;
+  max-width: 40%;
+  text-align: center;
+}
+
+.houses-for-sale__image img {
+  width: 100%;
+  height: auto;
+}
+
+/* ฟอร์ม */
+.houses-for-sale__form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end; /* จัดให้อยู่ระดับล่าง */
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* label อยู่ด้านบน */
+  gap: 5px;
+}
+
+.price-group {
+  display: flex;
+  gap: 0; /* ลบช่องว่างระหว่าง select */
+}
+
+.houses-for-sale__form input{
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  width: 400px;
+  height: 42px;
+}
+.houses-for-sale__form select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 42px;
+}
+
+.houses-for-sale__form button {
+  height: 42px; /* ความสูงเท่ากับ input และ select */
+  background-color: #c82021;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0 20px; /* เพิ่ม padding ซ้ายขวา */
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 300px;
+  font-weight: bold;
+}
+
+.houses-for-sale__form button:hover {
+  background-color: #a51818;
+}
+/* การ์ดเรียงแบบ Responsive */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* การ์ดเลื่อนลงเมื่อไม่มีพื้นที่ */
+  justify-content: center; /* จัดการ์ดให้อยู่กึ่งกลาง */
+  padding: 16px;
+}
+
+/* การ์ด */
+.property-card {
+  width: 300px; /* ความกว้างคงที่ */
+  flex-shrink: 0; /* ป้องกันไม่ให้การ์ดหดตัว */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  margin: 10px; /* เพิ่มระยะห่างระหว่างการ์ด */
+}
+
+.property-card img {
+  width: 100%;
+  height: 200px; /* ความสูงของรูปภาพ */
+  object-fit: cover;
+}
+
+.property-details {
+  padding: 16px;
+}
+
+.property-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.property-stats span {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.property-address {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.property-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.property-link:hover {
+  text-decoration: underline;
+}
+
+/* ลิงก์ "See all" */
+.see-all-link {
+  text-align: start; /* จัดข้อความให้อยู่กึ่งกลาง */
+}
+
+.see-all-link a {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.see-all-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 980px) {
+  .container {
+    padding: 8px;
+    gap: 16px; /* ปรับช่องว่างระหว่างการ์ด */
+  }
+
+  .property-card {
+    width: 100%; /* ทำให้การ์ดเต็มความกว้างของหน้าจอ */
+  }
+
+  .see-all-link {
+    margin-top: 20px;
+  }
+}

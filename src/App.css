@@ -9,5 +9,22 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #C82021; 
+}
+
+.navbar{
+  height: 3.75rem;
+}
+
+@media (max-width: 980px){
+  .navbar{
+    height: 45px;
+  }
+}
+
+.search-tab{
+  height: 26.563rem;
+}
+
+.footer{
+  height: auto;
 }
